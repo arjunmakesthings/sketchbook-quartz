@@ -1,4 +1,7 @@
 ***
+
+
+***
 ### looping animations #p5 
 Wanted to study how perfect loops could be made with simple shapes. Made something with squares, but still can't figure out the math for the sketch to make a loop, will have to do it on a video editor for now. 
 
