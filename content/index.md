@@ -1,5 +1,17 @@
 ***
+### rotational studies #p5
+Simple rotational studies based on yesterday's logic, but no animation. Used iteration through the array as variance. 
 
+
+![[rotStudy.png]]
+
+![[rotStudy4.png]]
+
+![[rotStudy5.png]]
+
+![[rotStudy6.png]]
+
+16:27, 2024-03-22
 
 ***
 ### looping animations #p5 
@@ -70,6 +82,8 @@ Ooh! Maybe I could use radians instead of degrees, maybe that value progression 
 ***
 ### kucch crazy ho gaya #punctual 
 
+![[Screenshot 2024-03-20 at 10.53.51 PM.png]]
+
 ``` c
 --bg
 
@@ -87,7 +101,7 @@ rect [cam,0] [2,2] * o * [r,cam/2,cam/0.8]* o>> video;
 [0,0,0] >> video; 
 ```
 
-![[Screenshot 2024-03-20 at 10.53.51 PM.png]]
+
 ![[Screenshot 2024-03-20 at 10.55.02 PM.png]]
 
 22:55, 2024-03-20
