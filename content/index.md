@@ -1,4 +1,111 @@
 ***
+### Washed up potential – text as a water wave #p5
+Wanted to treat text like a wave hitting the beach with many particles. First figured out what a wave would look like: 
+
+``` js
+  for (let y = 0; y <= height; y += 50) {
+    let wave = sin((y + waveOffset) / 50) * waveHeight;
+    fill(100 + wave, 150 + wave, 255);
+
+    circle(500, y, 300+wave);
+  }
+  waveOffset += waveSpeed;
+```
+
+Then used my convertToText function to make the same happen for a piece of text: 
+
+![[washed up potential.mov]]
+
+``` js
+//Washed Up Potential
+
+let xPos = [];
+let yPos = []; 
+let gridSize = 5; 
+
+let waveOffset = 50; // Starting wave offset for animation
+let waveSpeed = 1.2; // Adjust speed of wave movement
+let waveHeight = 30; // Amplitude of the waves
+
+let h = 211; 
+let s = 82; 
+let l = 24; 
+
+function setup() {
+  createCanvas(1000, 1000);
+  noStroke(); 
+  colorMode (HSL); 
+
+  convertLetterToPoints(); 
+}
+
+function draw() {
+  //background(h,s,l-40); 
+  background(h,s,l+73); 
+
+
+for (let i = 0; i<xPos.length; i++){
+  let wave = int(sin((i + waveOffset) / 50) * waveHeight);
+
+  console.log(wave); 
+
+  let col2 = map(wave, -25 ,25, 30, 70); 
+
+  fill (h,s,col2); 
+
+square (xPos[i]-wave/20, yPos[i], int(wave/1.8)); 
+}
+
+waveOffset += waveSpeed;
+
+}
+
+function convertLetterToPoints() {
+  textAlign(LEFT, CENTER);
+
+  //TypeToPoint
+  let points = [];
+
+  background(255);
+
+  fill(0);
+
+  //Text Properties
+  //textFont(font);
+
+  var tSize = 240; 
+  textFont("Garamond");
+  textSize(tSize);
+  textLeading (tSize/1.2); 
+  text('am i just washed up potential?', 60, -5, width/2+width/2, height/2+height/2);
+
+  loadPixels();
+  for (let y = 0; y < height; y += gridSize) {
+    for (let x = 0; x < width; x += gridSize) {
+      let px = get(x, y);
+      let r = px[0];
+      if (r < 200) {
+        points.push(createVector(x, y));
+      }
+    }
+  }
+  for (let i = 0; i < points.length; i+=2) {
+    let x = points[i].x;
+    let y = points[i].y;
+
+    xPos.push(x);
+    yPos.push(y);
+  }
+}
+
+
+```
+
+
+![[Screenshot 2024-03-24 at 12.21.57 PM.png]]
+
+12:27, 2024-03-24
+***
 ### rotational studies #p5
 Simple rotational studies based on yesterday's logic, but no animation. Used iteration through the array as variance. 
 
