@@ -1,4 +1,31 @@
 ***
+### Won't you stand by me – typographic sketch #p5 
+Wrote a sketch with particles that oscillate between two defined positions on the screen. 
+
+![[vid1.mp4]]
+
+![[Screenshot 2024-03-25 at 4.05.38 PM.png]]
+
+![[Screenshot 2024-03-25 at 4.05.26 PM.png]]
+
+![[Screenshot 2024-03-25 at 4.05.30 PM.png]]
+
+Used sin(inc) to give a number between -1 and 1. To smooth out the animation, the inc is incremented by 0.02 every frame. 
+
+``` js
+  update() {
+    this.x = map(sin(this.inc), -1, 1, this.x1, this.x2, true);
+    this.y = map(sin(this.inc), -1, 1, this.y1, this.y2, true);
+
+    this.s = map(sin(this.inc+this.inc), -1,1, gridSize*3, gridSize/2, true); 
+
+    this.inc += 0.02;
+  }
+```
+
+16:08, 2024-03-25
+
+***
 ### Washed up potential – text as a water wave #p5
 Wanted to treat text like a wave hitting the beach with many particles. First figured out what a wave would look like: 
 
