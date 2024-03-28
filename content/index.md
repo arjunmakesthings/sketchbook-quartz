@@ -1,4 +1,124 @@
 ***
+### I'm Shattering But It Doesn't Matter #p5 
+Lately been re-excited by the idea of using code for expressive typography. 
+
+![[Screen Recording 2024-03-28 at 2.53.19 PM.mp4]]
+
+![[Screenshot 2024-03-28 at 2.54.00 PM.png]]
+
+``` js
+//I'm Shattering But It Doesn't Matter
+
+
+let xPos = [];
+let yPos = [];
+let gridSize = 5;
+
+let waveOffset = 0; // Starting wave offset for animation
+let waveSpeed = 1.2; // Adjust speed of wave movement
+let waveHeight = 100; // Amplitude of the waves
+
+let h = 211;
+let s = 82;
+let l = 24;
+
+function setup() {
+  createCanvas(1000, 1000);
+  noStroke();
+  colorMode(HSL);
+
+  convertLetterToPoints();
+}
+
+function draw() {
+  //background(h,s,l-40);
+  background(0);
+
+  fill(255);
+
+  for (let i = 0; i < xPos.length; i++) {
+    let wave = int(noise((i + waveOffset) / 70) * waveHeight);
+
+    let col2 = map(wave, -25, 25, 30, 70);
+
+    // fill(h, s, col2);
+
+    //square(xPos[i]+random(-2,2)+wave, yPos[i]+random(-2,2), wave/4);
+
+    push();
+    translate(xPos[i], yPos[i] + wave);
+    rotate(wave / 10);
+    textSize(32);
+    text(":)", 0, 0);
+    pop();
+  }
+
+  waveOffset += waveSpeed;
+
+  /*
+
+  // Generate a wave pattern using sine function
+  for (let y = 0; y <= height; y += 50) {
+    let wave = sin((y + waveOffset) / 50) * waveHeight;
+    fill(100 + wave, 150 + wave, 255); // Light blue water with wave height variation
+
+    // Draw water based on y position and wave offset
+    circle(500, y, 300+wave);
+  }
+
+  // Update wave offset for animation
+  waveOffset += waveSpeed;
+
+  */
+}
+
+function convertLetterToPoints() {
+  textAlign(LEFT, CENTER);
+
+  //TypeToPoint
+  let points = [];
+
+  background(255);
+
+  fill(0);
+
+  //Text Properties
+  //textFont(font);
+
+  var tSize = 170;
+  textFont("IBM Plex Serif");
+  textSize(tSize);
+  textLeading(tSize);
+  text(
+    "i'm shattering but it doesn't matter", 60, -40, width / 2 + width / 2, height / 2 + height / 2
+  );
+
+  loadPixels();
+
+  var change = 3;
+  for (let y = 0; y < height; y += gridSize + change) {
+    for (let x = 0; x < width; x += gridSize + change) {
+      let px = get(x, y);
+      let r = px[0];
+      if (r < 200) {
+        points.push(createVector(x, y));
+      }
+    }
+  }
+  for (let i = 0; i < points.length; i += 2) {
+    let x = points[i].x;
+    let y = points[i].y;
+
+    xPos.push(x);
+    yPos.push(y);
+  }
+}
+
+```
+
+15:04, 2024-03-28
+
+***
 ### Won't you stand by me – typographic sketch #p5 
 Wrote a sketch with particles that oscillate between two defined positions on the screen. 
 
