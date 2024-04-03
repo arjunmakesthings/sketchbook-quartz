@@ -1,3 +1,138 @@
+
+***
+### portrait maker #punctual 
+
+![[Screenshot 2024-04-03 at 5.08.54 PM.png]]
+
+``` c
+-- flower
+
+[0,0,0] >> video; 
+
+o << 0.6;  
+
+x << 0; 
+y << 0; 
+d << 0.8;
+
+rot << [0, 0.3 .. 1]; 
+
+r << 0.87; 
+g << 0.19; 
+b << 0.38; 
+
+
+fit (1/1) $ 
+spin ([rot]) $ 
+fit [0.5/2] $ 
+circle [x,y] [d] * o * rgbs[r,g,b] >> video; 
+```
+
+17:09, 2024-04-03
+
+***
+### trippy flower #punctual 
+Flower with video input. 
+
+![[Screen Recording 2024-04-03 at 5.03.35 PM.mov]]
+
+``` c
+-- flower
+[0,0,0] >> video; 
+
+o << 0.6;  
+
+x << 0; 
+y << 0; 
+d << 0.8;
+
+rot << [0, 0.3 .. 1]; 
+
+r << 0.87; 
+g << 0.19; 
+b << 0.38; 
+
+
+fit (1/1) $ 
+spin ([rot]) $ 
+fit [0.5/2] $ 
+circle [x,y] [d] * o * rgbs[r,g,b] >> video; 
+```
+
+17:05, 2024-04-03
+
+***
+### wip #punctual 
+``` c
+o << 0.6;  
+
+rot << [0,0.2 .. 1.2];  
+
+-- pink: https://htmlcolorcodes.com/colors/shades-of-pink/
+
+r << 0.87; 
+g << 0.19; 
+b << 0.38; 
+
+zoom [2,2] $ 
+fit [1/1] $ 
+spin [osc(rot*0.02)] $ 
+fit [0.5/2] $ 
+circle [0,0] [0.3] * o * rgbs[cam] >> video; 
+
+```
+
+*** 
+### Rotating Flower #punctual 
+
+![[Screen Recording 2024-04-02 at 4.53.48 PM.mov]]
+
+16:54, 2024-04-02
+
+``` c
+o << 0.06;  
+
+rot << [0,0.2 .. 1.2];  
+
+-- pink: https://htmlcolorcodes.com/colors/shades-of-pink/
+
+r << 0.87; 
+g << 0.19; 
+b << 0.38; 
+
+fit [1/1] $ 
+spin [osc(rot*0.02)] $ 
+fit [0.5/2] $ 
+circle [0,0] [0.3] * o * [r,g,b] >> video; 
+```
+
+
+![[Screenshot 2024-04-02 at 4.48.34 PM.png]]
+
+``` c
+o << 0.006;  
+
+r << [0,0.2 .. 1.2];  
+
+spin [osc(r*0.02)] $ 
+fit [0.5/2] $ 
+circle [0,0] [0.3] * o >> video; 
+```
+
+16:48, 2024-04-02
+
+***
+### petal #punctual 
+Making a petal. No ellipse on Punctual so distorting a circle. 
+
+``` c
+o << 0.6;  
+
+fit [0.5/2] $ 
+circle [0,0] [0.3] * o >> video; 
+```
+
+16:40, 2024-04-02
 ***
 ### I'm Shattering But It Doesn't Matter #p5 
 Lately been re-excited by the idea of using code for expressive typography. 
@@ -431,7 +566,7 @@ zoom [z2*(-1), z2] $ tile [2, 2] [[fit (1/1) $ spin [a] $ [zoom[(z*(-1)),z] [cam
 ### making an 'a' with video input #punctual 
 Made a lower-case 'a' with shaders on Punctual. 
 
-``` c 
+``` haskell
 -- creating an A
 
 s << 0.1; 
@@ -523,7 +658,7 @@ rect [x1,y1] [w, h] * [0.8] * [r,g,b] >> video;
 ### ripple #punctual 
 Makes a water ripple. 
 
-``` c 
+``` haskell
 0, 0, 0 >> video; 
 
 w << fr/0.02; 
