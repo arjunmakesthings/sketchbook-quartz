@@ -1,3 +1,34 @@
+***
+### it's just a wave and i know #p5 
+Used the same text manipulations as earlier with mapping sine waves. Made while thinking of John Mayer's song. 
+
+![[vid.mov]]
+
+Love the treatment it produces. 
+
+![[Screenshot 2024-04-04 at 5.25.35 PM.png]]
+
+``` js
+  for (let i = 0; i < xPos.length; i++) {
+    //let wa = int(noise((i + waveOffset) / 70) * waveHeight);
+
+    let wa = map(sin(i*waveOffset), -1,1, 0, 10); 
+    let wave = wa*waveHeight; 
+
+    let col2 = map(wave, -25, 25, 10, 40);
+
+  fill (h,s,col2); 
+
+    push();
+    translate(xPos[i], yPos[i]+wave);
+    ellipse (0,0,gridSize*3, gridSize+wave*1.2); 
+    pop();
+
+  waveOffset += yPos[i]*waveSpeed;
+  }
+```
+
+17:27, 2024-04-04
 
 ***
 ### portrait maker #punctual 
@@ -31,7 +62,7 @@ circle [x,y] [d] * o * rgbs[r,g,b] >> video;
 17:09, 2024-04-03
 
 ***
-### trippy flower #punctual 
+### cam flower #punctual 
 Flower with video input. 
 
 ![[Screen Recording 2024-04-03 at 5.03.35 PM.mov]]
