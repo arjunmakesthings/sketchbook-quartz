@@ -1,3 +1,34 @@
+*** 
+### video flower
+![[Screen Recording 2024-04-08 at 11.09.51 PM.mov]]
+
+``` c
+-- flower
+[0,0,0] >> video; 
+ 
+o << 0.6;  
+ 
+x << 0; 
+y << 0; 
+d << 1;
+ 
+rot << [0, 0.3 .. 1]; 
+ 
+r << 0.87; 
+g << 0.19; 
+b << 0.38; 
+ 
+ 
+zoom [2,2] $ 
+fit (1/1) $ 
+spin ([rot]) $ 
+fit [0.5/2] $ 
+circle [x,y] [d] * o * [cam] >> video; 
+
+```
+
+23:10, 2024-04-08
+
 ***
 ### it's just a wave and i know #p5 
 Used the same text manipulations as earlier with mapping sine waves. Made while thinking of John Mayer's song. 
