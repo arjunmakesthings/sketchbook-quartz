@@ -1,5 +1,58 @@
+***
+### night code jams with S #punctual 
+S was around and I excitedly showed her Punctual. We messed around with a few blocks of code, without letting logic govern us.
+
+![[Screen Recording 2024-04-08 at 11.26.48 PM.mov]]
+``` c
+--bg
+ 
+ 
+o << 0.4; 
+ 
+r << 0.1; 
+g << 0.2; 
+b << 0.08;  
+ 
+-- top square
+move [osc(rnd)] $ 
+spin [osc(0.02)] $ 
+zoom [osc(0.080)] $ 
+move [osc(fr*0.0002)] $  
+tile [5,3] $ 
+spin[osc(0.09)] $ 
+circle [0,0] [2,2, 2] * o * hsvrgb[cam, r,g,b]>> video;
+
+-- osc (62) >> audio; 
+ 
+-- [0,0,0] >> video; 
+```
+
 *** 
-### video flower
+![[Screen Recording 2024-04-08 at 11.20.11 PM.mov]]
+
+``` c 
+--bg
+ 
+ 
+o << 0.4; 
+ 
+r << 0.1; 
+g << 0.02; 
+b << 0.08;  
+ 
+-- top square
+zoom [osc(0.02)] $ 
+move [osc(fr*0.0002)] $  
+tile [3,3] $ 
+spin[osc(0.2)] $ 
+rect [0,0] [2,2, 2] * o * hsvh[r,g,b,cam]>> video;
+
+-- osc (62) >> audio; 
+ 
+-- [0,0,0] >> video; 
+
+```
+
 ![[Screen Recording 2024-04-08 at 11.09.51 PM.mov]]
 
 ``` c
