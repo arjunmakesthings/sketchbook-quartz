@@ -1,3 +1,26 @@
+*** 
+### light shining on waterbody in the night #p5
+Was inspired by lights glimmering on a waterbody, seen during the night on my last trip to Ahmedabad (near the Riverfront). 
+
+Made this while listening to Perfect by Ed Sheeran. 
+
+![[2 1.mov]]
+
+``` js
+  for (let i = 0; i < xPos.length; i += 2) {
+    let wave = sin(i + waveOffset) * waveHeight;
+
+    line(xPos[i] + wave, yPos[i], xPos[i], yPos[i]);
+  }
+  // Update wave offset for animation
+  waveOffset += waveSpeed;
+```
+
+I like how it came out. You can also play around with the parameters, manipulating the legibility. 
+
+![[1.mov]]
+
+17:32, 2024-04-12
 ***
 ### night code jams with S #punctual 
 S was around and I excitedly showed her Punctual. We messed around with a few blocks of code, without letting logic govern us.
