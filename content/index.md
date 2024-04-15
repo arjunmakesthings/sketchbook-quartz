@@ -1,4 +1,107 @@
-*** 
+***
+### we go around in circles #p5 
+Still working on typographic treatment using interesting waves. Thought about each particle rotating in a circle by using cos and sin waves. 
+
+``` js
+  let x = cos(angle) * circleRadius;
+  let y = sin(angle) * circleRadius;
+  
+  // while
+  angle +=0.02
+```
+
+![[1 1.mov]]
+
+Also thought of a neat way to assign colours. Once particles are assigned an x & y coordinate: 
+
+``` js
+//declare array of colours
+let col = ['#941b0c', '#bc3908', '#f6aa1c'];
+
+// run through x / y array and assign random value from colour array.
+  for (let i = 0; i<xPos.length; i++){
+    n.push(random(col)); 
+  }
+
+// in draw
+fill (n[i]);
+```
+
+For size, I also used noise for some variability. Main draw code: 
+
+``` js
+function draw() {
+  background("#130108");
+
+  for (let i = 0; i < xPos.length; i += 1) {
+    let x = cos(i + mult) * diam;
+    let y = sin(i + mult) * diam;
+
+    fill(n[i]);
+    ellipse(xPos[i] + x, yPos[i] + y, (noise(x) * 30) / 2.2); // I think the division is redundant but somehow it reduced speed of the particles (?)
+  }
+
+  mult += inc;
+}
+```
+
+16:54, 2024-04-15
+
+***
+### boilerplate for hand-tracking #p5 #ml5
+Simple boilerplate for single hand tracking. Going to use it for the body synthesizer. Used a bit of ChatGPT to understand what's happening. 
+
+![[Screen Recording 2024-04-14 at 12.33.30 PM.mov]]
+
+``` js
+//Single Hand Tracker
+
+let video;
+let handpose;
+let predictions = [];
+
+function setup() {
+  createCanvas(640, 480);
+  video = createCapture(VIDEO);
+  video.hide();
+  handpose = ml5.handpose(video, modelReady);
+  handpose.on('predict', gotPredictions);
+}
+
+//To tell whether model has loaded or not
+function modelReady() {
+  text ("Model loaded", 50, 50); 
+}
+
+function gotPredictions(results) {
+  predictions = results;
+}
+
+function draw() {
+  background(255);
+  
+  // Flip the video horizontally to match hand to video
+  translate(width, 0);
+  scale(-1, 1);
+  image(video, 0, 0, width, height);
+  drawKeypoints();
+}
+
+function drawKeypoints() {
+  for (let i = 0; i < predictions.length; i++) {
+    let prediction = predictions[i];
+    for (let j = 0; j < prediction.landmarks.length; j++) {
+      let point = prediction.landmarks[j];
+      fill(255, 0, 0);
+      noStroke();
+      ellipse(point[0], point[1], 10, 10);
+    }
+  }
+}
+```
+
+12:36, 2024-04-14
+***
 ### light shining on waterbody in the night #p5
 Was inspired by lights glimmering on a waterbody, seen during the night on my last trip to Ahmedabad (near the Riverfront). 
 
