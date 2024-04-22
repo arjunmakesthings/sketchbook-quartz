@@ -1,3 +1,37 @@
+
+***
+### rotational studies #p5 
+Messed around with earlier rotational studies. Re-used the idea of a particle moving in a circular motion from the previous program. 
+
+``` js
+//Base 
+  for (let x = margin; x <= width - margin; x += s) {
+    for (let y = margin; y <= height - margin; y += s) {
+      let x1 = cos(x + inc) * diam;
+      let y1 = sin(y + inc) * diam;
+
+      push();
+      translate(x1, y1);
+      square(x, y, s, s / 8); //used rounding of corners for squares
+      pop();
+    }
+  }
+
+inc += 0.02;
+```
+
+![[Screen Recording 2024-04-18 at 2.07.20 PM.mov]]
+
+If I let the program draw itself out without replacing the background, it looks like this: 
+
+![[Screenshot 2024-04-18 at 2.08.45 PM.png]]
+
+Parameter changes (such as diameter incrementing / spacing between individual squares) result in these: 
+
+![[some.mov]]
+
+14:14, 2024-04-18
+
 ***
 ### we go around in circles #p5 
 Still working on typographic treatment using interesting waves. Thought about each particle rotating in a circle by using cos and sin waves. 
