@@ -1,5 +1,164 @@
 ***
-### making a hand-synthesiser
+### text-recursion #p5 
+Played around with the idea of making typography through recursion. 
+
+![[Screen Recording 2024-05-22 at 2.52.27 PM.mov]]
+
+First, I figured out a way to go through the "array" of a sentence. For example, if the sentence is: 
+
+``` js
+let message = "i'm so messed up";
+
+for (let i = 0; i < message.length; i++) {
+//Treats each character as an object – so you can do drawing manipulations. 
+}
+```
+
+Then, I used some nested loops which I've been studying in the Stanford Code in Place course. 
+
+``` javascript
+function draw() {
+  background(255);
+  for (let x = 50; x <= width; x += 200) {
+    for (let y = 0; y < height-90; y += 50) {
+      for (let i = 0; i < message.length; i++) {
+        push(); 
+        translate (x + i * 9, 400+sin(y)*(i*100)); 
+        rotate(sin(i*angle)*200);
+        text(message[i], 0,0 );
+        angle+=0.0003; 
+        pop(); 
+      }
+    }
+  }
+}
+```
+
+14:55, 2024-05-22
+
+***
+### sonic-pi learning jam, 21 may #SonicPi
+Boilerplate like DJ_Dave (https://www.youtube.com/watch?v=vuSZQnkOB_Y&t=389s) to set a metronome and ticker pattern. 
+
+``` ruby
+use_bpm 60
+
+#Making a metronome
+live_loop :met do
+  sleep 1
+end
+
+#Setting ticker pattern
+define :pattern do |pattern|
+  return pattern.ring.tick === 'x'
+end
+```
+
+Using patterns:
+
+``` ruby
+use_bpm 120
+
+#Making a metronome
+live_loop :met do
+  sleep 1
+end
+
+#Setting ticker pattern
+define :pattern do |pattern|
+  return pattern.ring.tick === 'x'
+end
+
+live_loop :kickDrum, sync: :met do
+  sample :bd_ada, amp: 1 if pattern "x--xxx--x----xx-"
+  sleep 0.25
+end
+
+live_loop :hh, sync: :met do
+  sample :drum_cymbal_closed if pattern "xxxx--xx--xxxx--"
+  sleep 0.25
+end
+```
+
+Basically, everything with "-" is a break. So, "xxxxxxxxxxxxxxxx" is the same as playing a loop with a certain amount of sleep between sounds. 
+
+Made this with the above-mentioned logic: 
+
+![[21May_Jam.wav]]
+
+Here's the code: 
+
+``` ruby
+use_bpm 120
+
+#Making a metronome
+live_loop :met do
+  sleep 1
+end
+
+#Setting ticker pattern
+define :pattern do |pattern|
+  return pattern.ring.tick === 'x'
+end
+
+live_loop :kickDrum, sync: :met do
+  sample :bd_ada, amp: 1 if pattern "x--xxx--x----xx-"
+  sleep 0.25
+end
+
+live_loop :hh, sync: :met do
+  sample :drum_cymbal_closed if pattern "xxxx--xx--xxxx--"
+  sleep 0.25
+end
+
+live_loop :vinyl, onset: 3, sustain: -2, decay: -2, sync: :met do
+  sample :vinyl_scratch, amp: 0.2 if pattern "---------------x"
+  sleep 1
+end
+
+#Piano
+notes = (ring :E4, :Fs4, :B4, :Cs5, :D5, :Fs4, :E4, :Cs5, :B4, :Fs4, :D5)
+
+live_loop :piano, sync: :met do
+  
+  6.times do
+    use_synth :piano
+    play notes.choose, amp: 0.5, release: 0.1
+    sleep 0.25
+  end
+  
+  1.times do
+    play notes.tick , amp: 0.7, release: 3, sustain: 2
+    sleep 4
+  end
+end
+```
+
+Used an array of notes for the piano, i.e `notes = (ring :E4, :Fs4, :B4, :Cs5, :D5, :Fs4, :E4, :Cs5, :B4, :Fs4, :D5)`. 
+
+Then, the computer chooses a note 6 times in the first loop: 
+
+``` ruby
+  6.times do
+    use_synth :piano
+    play notes.choose, amp: 0.5, release: 0.1
+    sleep 0.25
+  end
+```
+
+And ticks through the array once every loop for the 7th note: 
+
+``` ruby
+  1.times do
+    play notes.tick , amp: 0.7, release: 3, sustain: 2
+    sleep 4
+  end
+```
+
+21:15, 2024-05-21
+
+***
+### making a hand-synthesiser #p5
 Using my previous study on hand landmarks, I made a synthesiser that operates via the hand. 
 
 ![[Screen Recording 2024-05-15 at 12.54.48 PM.mov]]
