@@ -1,4 +1,35 @@
 ***
+### we keep going around in spirals #p5 
+Similar idea as the one before, doing drawing manipulations with each letter of a sentence. 
+
+![[frame2.jpeg]]
+
+``` javascript
+  angleMode(DEGREES);
+
+  let angle = 0;
+  let radius = 0;
+
+  for (let i = 0; i < message.length; i++) {
+    let x = width / 2 + cos(angle) * radius;
+    let y = height / 2 + sin(angle) * radius;
+
+    push();
+    translate(x, y);
+    rotate(angle);
+    text(message[i], 0, 0);
+    pop();
+
+    angle += baseAngleStep;
+    radius += baseRadiusStep;
+    baseAngleStep += 0.1;
+    baseRadiusStep += 0.03;
+  }
+```
+
+14:22, 2024-05-23
+
+***
 ### text-recursion #p5 
 Played around with the idea of making typography through recursion. 
 
