@@ -1,8 +1,58 @@
 ***
+### using beatbox-samples #SonicPi 
+Messed around with some beatbox samples from the internet for some quick exploration. 
+
+![[beatBox1.wav]]
+
+``` ruby
+use_bpm 120
+
+#Making a metronome
+live_loop :met do
+  sleep 1
+end
+
+#Setting ticker pattern
+define :pattern do |pattern|
+  return pattern.ring.tick === 'x'
+end
+"
+Custom loaded samples here
+
+"
+
+live_loop :kick, sync: :met do
+  sample k, amp: 3 if pattern 'x-x-x-x-'
+  sleep 0.5
+end
+
+live_loop :snare, sync: :met do
+  sample s, amp: 3 if pattern '-x--xx-xx-x-x--'
+  sleep 0.25
+end
+
+live_loop :sh, sync: :met do
+  sample whisp, amp: 5 if pattern '-------x'
+  sleep 0.5
+end
+
+"
+live_loop :snare2, sync: :met do
+  sample snare if pattern '---xx--xx'
+  sleep 0.25
+end
+"
+
+```
+
+
+***
 ### we keep going around in spirals #p5 
 Similar idea as the one before, doing drawing manipulations with each letter of a sentence. 
 
 ![[frame2.jpeg]]
+
+![[Screen Recording 2024-05-23 at 6.00.14 PM.mov]]
 
 ``` javascript
   angleMode(DEGREES);
