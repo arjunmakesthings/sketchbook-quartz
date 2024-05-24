@@ -1,4 +1,63 @@
 ***
+### text spiral #p5 
+![[Screen Recording 2024-05-24 at 4.55.04 PM.mov]]
+
+``` js
+  for (let i = 0; i < message.length; i++) {
+    for (let r = 20; r<=400; r+=15){
+    let angle = (TWO_PI * message.length) * i*20;
+
+    let x = width / 2 + cos(r+angle3) * i;
+    let y = height / 2 + sin(angle) * r;
+
+    push();
+    translate(x, y);
+    //rotate(angle);
+    text(message[i], 0, 0);
+    pop();
+
+    //radius+=0.04;
+
+    angle3 +=0.008;
+  }
+}
+```
+
+16:56, 2024-05-24
+
+***
+### more text stuff #p5 
+I think the effect is pretty cool but it loses readability. But is that even important? Can't this just be a piece made from the aesthetics of letters? 
+
+![[letters.jpeg]]
+
+In all fairness, I have zero idea about what's happening in the code. I was just fiddling around with previous algorithms. But here: 
+
+``` js
+  for (let r = 20; r<=800; r+=8){
+  for (let i = 0; i < message.length; i++) {
+    let angle = (TWO_PI * message.length) * i*20;
+
+    let x = width / 2 + cos(r+angle) * r;
+    let y = height / 2 + sin(angle) * r;
+
+    push();
+    translate(x, y);
+    //rotate(angle);
+    text(message[i], 0, 0);
+    pop();
+    }
+    }
+
+```
+
+It can also move apparently (?) 
+
+![[Screen Recording 2024-05-24 at 4.51.51 PM.mov]]
+
+16:52, 2024-05-24
+
+***
 ### using beatbox-samples #SonicPi 
 Messed around with some beatbox samples from the internet for some quick exploration. 
 
