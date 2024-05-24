@@ -1,5 +1,34 @@
 ***
+### more text #p5 
+
+![[Screen Recording 2024-05-24 at 5.05.49 PM.mov]]
+
+``` js
+  for (let i = 0; i < message.length; i++) {
+    for (let r = 20; r<=400; r+=5){
+    let angle = (TWO_PI * message.length) * i;
+
+    let x = width / 2 + cos(r+angle3) * r/2;
+    let y = height / 2 + sin(r+angle) * 300;
+
+    push();
+    translate(x, y);
+    //rotate(angle);
+    text(message[i], 0, 0);
+    pop();
+
+    //radius+=0.04;
+
+    angle3 +=0.0008;
+  }
+}
+```
+
+17:08, 2024-05-24
+
+***
 ### text spiral #p5 
+
 ![[Screen Recording 2024-05-24 at 4.55.04 PM.mov]]
 
 ``` js
