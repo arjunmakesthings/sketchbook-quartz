@@ -1,4 +1,22 @@
 ***
+### city grid #punctual 
+Was meaning to try some text manipulation but ended up making a zooming in / out of a city grid like structure with some noise.
+
+![[city grid.mov]]
+
+
+``` ruby
+a << 0.1; 
+
+zoom [osc(0.005)] $ 
+tile [1, osc(frt*0.2)*20] $ 
+circle [0, 0] [10] * img "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt6AfgR9v6HaWpAYVjMgHiYGmKYTwo136uyg&s" * 0.4
+>> video; 
+```
+
+20:10, 2024-06-11
+
+***
 ### even breathing is exhausting #p5 
 Worked peacefully to try and understand how text is being processed, so that I can draw more effectively while maintaining the message. Made a simple sketch. 
 
