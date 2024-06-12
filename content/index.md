@@ -1,4 +1,118 @@
 ***
+### gravity-inspired #SonicPi 
+Was inspired by the structure of 'Gravity' by John Mayer. Attempted to recreate logically on SonicPi. 
+
+The track has a high-hat that runs every beat. 
+
+``` ruby
+#inspired by Gravity
+
+use_bpm 124
+
+sample :drum_splash_hard
+
+#Making a metronome
+live_loop :met do
+  sleep 1
+end
+
+#Setting ticker pattern
+define :pattern do |pattern|
+  return pattern.ring.tick === 'x'
+end
+
+live_loop :hh, sync: :met do
+  sample :drum_cymbal_closed if pattern "xxxxxx"
+  sleep 1
+end
+```
+
+Then, there's the snare and the double kick-drum. 
+
+``` ruby
+#Drums
+live_loop :kickDrum , sync: :met do
+  with_fx :echo , decay: 0.08 , phase: 0.15 do
+    sample :drum_heavy_kick , amp: 0.7 if pattern "x-----"
+    sleep 1
+  end
+end
+
+live_loop :snare , sync: :met do
+  sample :drum_snare_hard if pattern "---x--"
+  sleep 1
+end
+```
+
+Essentially sounding like this: 
+![[gravityDrumsOnly.wav]]
+
+Then came the tricky part that I'm yet to figure out: the melody. For now, it's the chords with an ugly-sounding dpulse synth. 
+
+``` ruby
+#melody
+
+melody_pattern = "-----------x------------"
+
+notes = [:E, :G, :G, :A, :A]
+
+live_loop :notes1, sync: :met do
+  use_synth :dpulse
+  
+  if melody_pattern.look == "x" # Use look to check the current step in the pattern
+    play :E
+    sleep 1
+    play :G
+    sleep 0.5
+    play :G
+    sleep 1
+    play :A
+    sleep 1
+    play :A , decay: 1
+    sleep 1
+    # No need for an else statement, just tick at the end
+    tick # Move to the next step in the pattern
+  else
+    sleep 1
+    tick # Move to the next step in the pattern even if not playing
+  end
+end
+
+melody_pattern2 = "----------------------x"
+
+live_loop :notes2, sync: :met do
+  use_synth :dpulse
+  
+  if melody_pattern2.look == "x" # Use look to check the current step in the pattern
+    play :E
+    sleep 1
+    play :G
+    sleep 0.5
+    play :G
+    sleep 1
+    play :A
+    sleep 0.5
+    play :A
+    sleep 0.5
+    play :A , decay: 1
+    sleep 1
+    # No need for an else statement, just tick at the end
+    tick # Move to the next step in the pattern
+  else
+    sleep 1
+    tick # Move to the next step in the pattern even if not playing
+  end
+end
+```
+
+Together sounding like this: 
+![[gravityMelody_Trial1.wav]]
+
+I think instead of chasing after Gravity, I can now start to play around with the structure that is created. Let's see what comes of it, might scrap the whole melody bit. It ain't working. 
+
+12:42, 2024-06-12
+
+***
 ### city grid #punctual 
 Was meaning to try some text manipulation but ended up making a zooming in / out of a city grid like structure with some noise.
 
