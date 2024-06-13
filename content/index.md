@@ -1,4 +1,44 @@
 ***
+### gravity-based #SonicPi 
+Added a melody on top of the existing drum beat. Melody structure was simple, took notes from the Gravity intro and made SonicPi choose from the array. 
+
+![[gravityJM_13June.wav]]
+
+Fun melody structure. 
+
+``` ruby
+#Melody2
+notes = [:E, :G, :G, :A, :A]
+
+#use_random_seed 1010892
+
+live_loop :melody , sync: :met do
+  
+  #use_synth_defaults attack: 0.5, decay 0.5,
+  
+  5.times do
+    use_synth :piano
+    play notes.choose
+    sleep 1
+  end
+  
+  sleep 6
+  
+  notes2 = [:E5, :G5, :G5, :A5, :A5]
+  
+  7.times do
+    use_synth :piano
+    play notes2.choose
+    sleep 0.5
+  end
+  
+  sleep 6
+end
+```
+
+22:00, 2024-06-13
+
+***
 ### gravity-inspired #SonicPi 
 Was inspired by the structure of 'Gravity' by John Mayer. Attempted to recreate logically on SonicPi. 
 
