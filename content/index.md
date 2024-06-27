@@ -1,4 +1,25 @@
 ***
+### growing up is messy #p5 
+Type sketch. Made while mum was in surgery and I was writing my 'growing up' article. 
+
+![[growing up 10s.mov]]
+
+``` js
+
+    for (let y = 20; y<=height-20; y+=50){
+        for (let x = 20; x<=width-20; x+=230){
+          for (let i = 0; i<t.length; i++){
+            textSize (140+tSize); 
+            tSize =  sin(frameCount*0.03)*100; 
+            text (t[i], x+(i*20), y)
+          }
+        }
+      }
+```
+
+12:20, 2024-06-27
+
+***
 ### gravity-based #SonicPi 
 Added a melody on top of the existing drum beat. Melody structure was simple, took notes from the Gravity intro and made SonicPi choose from the array. 
 
