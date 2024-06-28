@@ -1,4 +1,13 @@
 ***
+### first ever script #p5 
+Published a [script](https://github.com/arjunmakesthings/textToPoints) to help people draw with text. It uses a resolved version of what Navya originally shared with me during a collaborative experiment, made a lot easier for anyone to plug & play. 
+
+All the documentation is on [GitHub](https://github.com/arjunmakesthings/textToPoints). 
+
+![[Screen Recording 2024-06-28 at 7.37.49 PM.mov]]
+
+19:46, 2024-06-28
+***
 ### growing up is messy #p5 
 Type sketch. Made while mum was in surgery and I was writing my 'growing up' article. 
 
