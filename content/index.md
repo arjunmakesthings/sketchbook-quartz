@@ -1,4 +1,17 @@
 ***
+### webgaze #p5 
+Figuring out gaze tracking via the webgaze.js library. Using a sketch by CedHon. 
+
+![[Screen Recording 2024-07-28 at 11.58.58 PM.mov]]
+
+I think it could be interesting to see if open source, accessible gaze-tracking tools could be made for UX research. 
+
+I just need to figure out easier ways to train it, move it out of the training zone, track eye-movement data, and then present a summary of the findings. Time for a mini-program maybe? 
+
+Too sleepy to do this right now. But yes, in the works. 
+
+00:02, 2024-07-29
+***
 ### i'm losing myself #p5 
 Type sketch. Would be nice to sync it to a piano melody. Maybe I should create one using the same mathematical expressions? That could be interesting. 
 
