@@ -1,4 +1,17 @@
 ***
+### gaze-tracking prototype #p5 
+finished working on an open-source gaze-tracking research tool prototype. 
+
+code here: https://github.com/arjunmakesthings/gaze-tracker
+use here: https://arjunmakesthings.github.io/gaze-tracker/index.html
+
+maybe i have the potential to make more micro-tools and share them with the world; some silly, some, just perhaps, useful.
+
+![[gaze-tracker.mp4]]
+
+02:51, 2024-08-11
+
+***
 ### webgaze #p5 
 Figuring out gaze tracking via the webgaze.js library. Using a sketch by CedHon. 
 
