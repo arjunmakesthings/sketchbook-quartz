@@ -1,4 +1,44 @@
 ***
+### writing tool v1 #p5 
+I'm working on a journalling tool of sorts? The goal is to try and help people capture a visual memoir of an automatic writing session. I think I'll work on this slowly, solving problems and exploring the scope through multiple versions. 
+
+Today it was just about cracking the idea of typing on the screen and the letters being processed as individual shapes (so that I can perhaps try and manipulate them in some way). 
+
+![[writing tool v1.mov]]
+
+``` js
+function keyTyped() {
+  if (keyCode != ENTER) {
+
+    // automatic line break
+    if (xPos > width - 100) {
+      yPos += tSize * 2; //consider this leading; at the moment double of text size.
+      xPos = 100;
+    }
+
+    //actual display of letters
+    xoff++; 
+    xPos += textWidth(key)*random(2, 3, 5);
+    ang += noise(xoff);
+
+    letters.push(new Letter(key, xPos, yPos, ang));
+
+  } else if (key == " ") {
+    xPos += textWidth(O) * 3;
+  }
+
+      // forced line break
+      if (keyCode == ENTER) {
+        yPos += tSize * 2.5; //consider this after-para
+        xPos = 100;
+      }
+}
+
+```
+
+00:51, 2024-08-18
+
+***
 ### gaze-tracking prototype #p5 
 finished working on an open-source gaze-tracking research tool prototype. 
 
