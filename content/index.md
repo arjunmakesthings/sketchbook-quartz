@@ -1,3 +1,16 @@
+***
+### make visual artefacts of digital rants #p5 
+You can rant openly, without anyone else ever making full sense of what you said that day. I think this could be an interesting tool. 
+
+I need to debug overlaps, add dates and the ability for people to save pictures of their rants.
+
+![[Screenshot 2024-08-22 at 10.51.08 PM.png]]
+
+![[vid 1.mov]]
+
+![[Screenshot 2024-08-22 at 10.49.48 PM.png]]
+
+22:53, 2024-08-22
 *** 
 ### physics typography #p5 #matterjs
 
