@@ -1,4 +1,14 @@
 ***
+### finally a livecoding tool that works for me! #strudel
+Discovered strudel during a computational arts festival here in Delhi. Love the software. Plus it's javascript; wondering how to combine p5 and strudel for some audio-visual stuff. 
+
+I swear I had a sicker beat.
+
+![[strudel1.mov]]
+
+18:28, 2024-09-17
+
+***
 ### make visual artefacts of digital rants #p5 
 You can rant openly, without anyone else ever making full sense of what you said that day. I think this could be an interesting tool. 
 
