@@ -6,6 +6,19 @@ I swear I had a sicker beat.
 
 ![[strudel1.mov]]
 
+``` js
+//cfgd melody
+
+$: s("oh sd , bd -").delay ("0.3 0 ").amp("2 0").hush()
+
+$: note ("[[c]*4 [f]*4 [g]*4 [d]*4]").sound("gm_synth_strings_2").amp ("0.8").lpf("1000")
+
+$: s("<hh hh [hh hh] hh - sd ->*8").amp ("1").hush()
+
+//$: s("[[hh]*16], [sd - sd oh], [bd - bd]*2").amp("0.01")
+
+```
+
 18:28, 2024-09-17
 
 ***
