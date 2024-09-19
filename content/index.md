@@ -3,6 +3,20 @@
 
 ![[perf2.mov]]
 
+``` js
+//20 sept, rainy day
+
+$: s ("<hh [hh hh hh] hh [hh hh hh] hh [hh hh hh] hh hh>*4").gain ("[0.1 1 0.1] 0.5")
+
+$: s ("<oh - [oh oh] - >*2").gain("0.6")
+
+$: s ("bd [bd - bd]*2").bank("BossDR110").amp("0.5"). gain("0.09 0.5")
+
+$: note ("<[c]*2 [f g e a] [d]*2>").sound("gm_electric_guitar_jazz").gain ("[0.5 0.7 0.3] 0.4")
+
+$: note ("<c c f g>").sound("gm_epiano1").echo(3, 1/6, .4).gain(0.4)
+```
+
 01:35, 2024-09-20
 
 ***
