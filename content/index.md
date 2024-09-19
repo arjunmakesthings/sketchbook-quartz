@@ -1,4 +1,11 @@
 ***
+### 20 sept - rainy day #strudel 
+
+![[perf2.mov]]
+
+01:35, 2024-09-20
+
+***
 ### finally a livecoding tool that works for me! #strudel
 Discovered strudel during a computational arts festival here in Delhi. Love the software. Plus it's javascript; wondering how to combine p5 and strudel for some audio-visual stuff. 
 
