@@ -1,3 +1,31 @@
+
+***
+### strudel + learning hydra #strudel #hydra #livecoding
+
+i like the idea of 'livecoding'. someday, perhaps, i can perform for people. 
+
+i enjoyed reading a little bit about hydra. i think there's a lot of potential there. will deep-dive. 
+
+![[perf3.mov]]
+
+``` js
+
+//21 Sep, 2024.
+
+await initHydra()
+osc(10 , 0.09 , (Math.PI*2)*0.1).kaleid(Math.PI*2).scale(1,1,()=>window.innerWidth/window.innerHeight).out()
+
+
+$: n("[<3 [5 7] [3@] 1>*2] , <<[4]*2> <[5]*2> <[7]*2> <[3]*2>>").scale("A2:minor, C3:major").sound("gm_slap_bass_2").gain ("0.7 , [0.3 0.6 0.9]")
+
+$: s ("[hh]*12 [oh , bd]").delay("0 0.6 , 0").gain("0.1 [0.3 , 0.1]").bank("RolandCompurhythm1000 , EmuSP12").lpf("[500 1000 1500 2000] 5000")
+
+$: note("<[f5]*3 [e4]*3 [d3]*3 ~ >*2 , <c2@ b2 a2 c2@>*2").sound("gm_drawbar_organ").lpf("8000")
+
+```
+
+17:34, 2024-09-21
+
 ***
 ### circles and sine #p5 
 
