@@ -1,4 +1,62 @@
+***
+### this is how i feel #p5 + #strudel 
+visuals and music. 
 
+visuals inspired by the thought – we're two bodies in space. music inspired by gravity, john mayer. i miss you. 
+
+![[Screen Recording 2024-09-21 at 11.26.27 PM.mov]]
+
+``` js
+//we're two bodies in space, september 2024.
+
+$: s ("[[hh , [bd]] hh hh [hh , sd] hh hh] , <oh>/4").cpm(23).bank("ViscoSpaceDrum").room("0 0.2")
+
+$: n("<[0@ 1 3 5@] ~ [5@ 3 1 0@] ~> ").scale("G:major").sound("gm_electric_guitar_clean").cpm(23).room("0 0.2 1")
+
+$: n ("0 , 0").sound("gm_fx_echoes").loopAt( "0.4 , 0.7").gain("0.2 ").lpf(500).room("0 0.2 0.4")
+
+```
+
+
+``` js
+//sketching; squares and sine; september 2024.
+
+let margin = 200;
+let w = 800;
+let h = 25; 
+
+let amp = 70;
+
+function setup() {
+  createCanvas(1000, 1000);
+  noStroke();
+  rectMode(CENTER); 
+}
+
+function draw() {
+  //background('#176383');
+  background(0);
+
+  var t = frameCount / 60;
+
+  fill(255);
+  //noFill(); 
+
+  for (let x = margin; x <= width - margin; x += w/2) {
+    for (let y = margin; y <= height - margin; y += h) {
+      push(); 
+      translate (x + sin(y + t) * amp, y); 
+      //var ang = map(sin(t), -1, 1, 0, TWO_PI); 
+      var ang = (t+sin(y+t))*0.2
+      rotate (ang)
+      rect(0, 0, w*(sin(y+t)*0.4), h);
+      pop(); 
+    }
+  }
+}
+```
+
+23:29, 2024-09-21
 ***
 ### strudel + learning hydra #strudel #hydra #livecoding
 
