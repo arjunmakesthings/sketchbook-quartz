@@ -1,4 +1,46 @@
 ***
+### everything is about u
+p5 sketch. 
+
+![[everything is about u.mov]]
+
+Used the shape of a parabola to represent 'u'. Wanted a trail system but couldn't figure it out; so gave variance by changing size. 
+
+``` js
+ var seconds = frameCount / 60;
+
+    //yStretch=map(noise(seconds), 0, 1, 10, 50);
+
+    this.x = map(sin(seconds), -1, 1, -xStretch, xStretch);
+    this.y = map(this.x * this.x * 6, 0, xStretch * xStretch, 0, yStretch);
+
+    this.s = map(noise(seconds), 0, 1, 3, 20);
+
+    //circle(initX + x, initY - y , 50);
+
+    circle(this.initX + this.x, this.initY - this.y, this.s);
+
+```
+
+The formula for a (reverse) parabola is this: 
+
+``` js
+  var seconds = frameCount / 60;
+
+  var x = map(sin(seconds), -1, 1, -xStretch, xStretch);
+
+  //quadratic equation to give parabola y = x*x
+  var y = map((x*x)*1, 0, xStretch*xStretch, 0, yStretch); 
+
+  circle(initX + x, initY - y , 50); 
+  
+```
+
+Also, fixed my lettersToPoints library to include maxWidth and maxHeight as well. And now it's deliverable via CDN: https://github.com/arjunmakesthings/p5.textToPoints
+
+17:28, 2024-09-22
+
+***
 ### this is how i feel #p5 + #strudel 
 visuals and music. 
 
