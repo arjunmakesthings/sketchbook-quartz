@@ -1,4 +1,29 @@
 ***
+### new painting algorithm #p5 
+i revisited my old computer-painting algorithm. 
+
+![[Screenshot 2024-09-29 at 11.08.20 PM.png]]
+
+![[Screenshot 2024-09-29 at 11.10.10 PM.png]]
+
+![[Screenshot 2024-09-29 at 11.02.42 PM.png]]
+
+![[Screen Recording 2024-09-29 at 11.07.56 PM.mov]]
+
+since my understanding of programming has become better, i was able to rethink the algorithm. now, each brushStroke is treated as an object that gets the following data as input: 
+
+``` js
+    //A brushStroke has a starting position (originX, originY), brushWidth (the breadth of the stroke), startingAngle, distance (that it has to travel), pace (speed at which it is supposed to travel), colour & opacity of that colour, how much the bristles have frayed (frayness), fineness (how close or apart the bristles are from each other) and bristleWidth (how small or big are the bristles). 
+
+constructor(originX, originY, brushWidth, startingAngle, distance, pace, colour, opacity, frayness, fineness, bristleWidth, directionProbability){
+
+}
+
+```
+
+23:13, 2024-09-29
+
+***
 ### everything is about u
 p5 sketch. 
 
