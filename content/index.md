@@ -1,4 +1,41 @@
 ***
+### maybe i need to make it static #p5 
+if it runs in real time, it lags quite a bit. anyway, made progress on the new painter. 
+
+![[Screenshot 2024-09-30 at 2.34.29 PM.png]]
+
+parameters: 
+
+``` js
+      /*
+      PARAMETERS
+
+      //brush selection
+      - brushWidth = how thick the end-stroke is supposed to be. think of it like paintbrush 'size' (breadth).
+      - frayness = how far apart (vertically) are the bristles from each other? 
+      - fineness = how far apart (horizontally) are the bristles from each other?
+      - bristleWidth = how thick are the bristles themselves?
+
+      //colour
+      - colour = what (all) colours do you want in your painting?
+      - opacity = how opaque or transparent do you want your strokes to be?
+
+      //starting position
+      - margin = set the margin for your composition.
+      - originX, originY = starting x and y position on the canvas.
+      - startingAngle = at what angle do you place your paintbrush.
+
+      //travel
+      - directionToMove = what direction are you going to move your brush in?
+      - distance = what distance should the paintbrush travel?
+      - pace = how fast should the paintbrush travel?
+      */
+
+```
+
+14:37, 2024-09-30
+
+***
 ### new painting algorithm #p5 
 i revisited my old computer-painting algorithm. 
 
