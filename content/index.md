@@ -1,4 +1,55 @@
 ***
+### lift pattern #p5 
+
+![[lift_pattern_loop.mov]]
+
+saw the original (static) pattern on the roof of sakina's lift. an ellipse is overlaid with a rotating square. messing around with radii leads to scope of exploration with figure & ground. 
+
+``` js
+//Sakina's Lift; October, 2024. 
+let r = 50; 
+let margin = r; 
+
+function setup() {
+    createCanvas(1000, 1000);
+    rectMode(CENTER); 
+    angleMode (DEGREES); 
+    noStroke(); 
+  }
+  
+  function draw() {
+    background(0);
+
+    var t = frameCount/60; 
+
+    for (let x = margin; x<=width-margin; x+=r){
+      for (let y = margin; y<=height-margin; y+=r){
+      fill (255); 
+      ellipse (x, y, r); 
+
+      push(); 
+      translate (x,y); 
+
+      //debug
+      /*
+      rotate (45); 
+      fill ('red'); 
+      */
+
+      //actual
+      fill (0); 
+      rotate (sin(t)*500); 
+
+      square (0,0,r/1.3, r/10); 
+      pop(); 
+      }
+    }
+  }
+```
+
+21:02, 2024-10-08
+
+***
 ### maybe i need to make it static #p5 
 if it runs in real time, it lags quite a bit. anyway, made progress on the new painter. 
 
