@@ -1,4 +1,24 @@
 ***
+### drawings with the cartesian coordinate system #p5 
+i have been toying around the idea of using the cartesian coordinate system as a framework to generate drawings. 
+
+![[Screenshot 2024-10-11 at 7.53.58 PM.png]]
+
+some outputs from 11th october:
+
+![[2.jpeg]]
+
+![[3.jpeg]]
+
+i think this sets the base for a long-term project, perhaps something that i can explore over the course of months. it also improves my understanding of drawing with 2D geometry.
+
+outputs will get increasingly complex with time. 
+
+![[4.jpeg]]
+
+19:55, 2024-10-11
+
+***
 ### lift pattern #p5 
 
 ![[lift_pattern_loop.mov]]
