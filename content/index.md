@@ -1,4 +1,50 @@
 ***
+### strudel + hydra learning #strudel #hydra 
+spent some time trying to study sheet-music-theory and recreating melodies from a new coldplay song. paired with some hydra learning for visuals. hydra's simple, but powerful. 
+
+![[12Oct.mov]]
+
+``` js
+// feelslikeimfallinginlove inspired
+
+/*
+reference sheet: https://musescore.com/user/60217162/scores/19154851
+reference video: https://www.youtube.com/watch?v=7pr7GpLdBxU&t=40s
+*/
+
+//modular bd from bank = EmuModular
+
+//hydra
+await initHydra()
+noise(Math.sin(10)+5, 0.5).thresh(0.5, 0.8).color(10, 20, 2).kaleid(50).rotate( () => (time%90)/10).out(o0)
+
+//music
+
+$: n("<5 ~ >/2"). sound("gm_synth_choir").lpf("1000").gain(choose("0.2 0.5 0.7"))
+
+$: s ("<bd>").cpm ("121").bank ("KorgKR55").stretch ("0 0.06 0 0.06").lpf("300").gain("0.4")
+
+//base chord 
+$: note ("<[c2,c3]  [c@3]  [c!3]  [c@3]  [c3]>*2").cpm("120").sound("gm_piano"). gain("0.09")
+
+//melody2
+$: note("<[g3 , e4] ~ [c4 e@4 g4 a5] [c5 , f4] [f4 , a4]>/2").cpm("120").sound("gm_epiano2").gain(choose("0.5")).adsr(".09:0.2:0.3:0.5")
+
+//hh
+$: s("<[oh] ~ [hh]*3 [hh , oh, sd] [oh ,sd] [hh]*3 [hh , oh, sd] >*2").cpm("120").bank("AlesisHR16").gain("0.01")
+
+
+//c note
+//$: note ("<[c2, c3] c3 [c3 c3@ c3]>").sound("gm_piano")
+
+//melody
+//$: note ("<<g4 , e5> [c5 e5 g5 a6] [f5, c6@] <f5 , a6> [g5] <e5, g5>>*2").sound ("piano")
+
+```
+
+22:33, 2024-10-12
+
+***
 ### drawings with the cartesian coordinate system #p5 
 i have been toying around the idea of using the cartesian coordinate system as a framework to generate drawings. 
 
