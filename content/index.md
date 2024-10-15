@@ -1,4 +1,38 @@
 ***
+### #strudel #hydra 
+
+day 0 at the b-side festival. messed around with some code, in my room, at night. 
+
+![[15Oct.mov]]
+
+
+``` js
+
+//$: s("[hh*4, bd, oh] [hh hh] [hh]*6 [hh , oh]")
+
+await initHydra()
+noise (10)
+.layer(gradient().r())
+.thresh(0.5,0.1)
+.color (0, 0.4, 0.7)
+  .modulateRepeat(noise(1000),2, 2, 0.5, 0.5)
+  .out(o0)
+
+$: note("<c4  a4  b3 f4 c3> ,  [f5*2 g5/4 g6]*2 ,  [g5 b4*2 a4] ").sound("piano , gm_epiano2 ").gain("0.3 , 0.6 0.9")
+
+$: s("cp").gain(1)
+
+$: s("[hh*2 [sd , mt] bd]*2").lpf("1000").gain("0.2")
+
+$: note("f3 f1/2 f2").sound("gm_electric_guitar_clean")
+
+//$: note("[c4, a4, b3] , b5  g4/2 a@5").sound("gm_electric_bass_pick").lpf("800")
+
+```
+
+23:00, 2024-10-15
+
+***
 ### strudel + hydra learning #strudel #hydra 
 spent some time trying to study sheet-music-theory and recreating melodies from a new coldplay song. paired with some hydra learning for visuals. hydra's simple, but powerful. 
 
