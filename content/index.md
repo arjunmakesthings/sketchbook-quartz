@@ -1,4 +1,38 @@
 ***
+### water-boy #strudel #hydra 
+spent 30 minutes today learning some hydra. had an idea in mind and could figure out how to execute it. 
+
+![[Screen Recording 2024-11-05 at 5.33.50 PM.mov]]
+
+i'll get there slowly. 
+
+``` js
+await initHydra()
+s0.initCam()
+
+src(s0)
+.modulate(noise(2, 0.5))
+//.pixelate(100, 100)
+.color(1,3,5)
+.mult(noise(4, 0.5))
+
+.out(o0)
+
+//drums
+$: s ("bd bd bd bd").bank("AlesisSR16").delay("0.2 0.4 0.8").echo(4, 1/4, .2).gain("0.1")._punchcard()
+  $: s("[hh]*4 [hh]*2 [hh] [hh]*4").bank("AlesisSR16").gain("0 0.2 0.6 1 0 0.2 0.6 1").chop("2 4 6 8 10 2 4 6 8 10")
+
+//bass
+$: n("[0] 2 [4 6] 2").scale("D3:minor").sound("gm_contrabass").scaleTranspose("-2 -4 2 -2").echo(8, 1/4, .02)
+
+//highfreqMelody
+$: n("[1 3 7 4] [7 5 4 1] [3 5 7 2] [1 4 7 2]").scale("D4:minor").sound("triangle")._scope().slow(2).lpf(1000).gain("sine")
+
+```
+
+17:36, 2024-11-05
+
+***
 ### #strudel #hydra 
 
 day 0 at the b-side festival. messed around with some code, in my room, at night. 
