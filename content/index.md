@@ -1,4 +1,12 @@
 ***
+### more existence artwork
+looking at the shape of cells, introducing some randomness, etc. 
+
+![[Screenshot 2024-11-06 at 7.20.13 PM.png]]
+
+19:20, 2024-11-06
+
+***
 ### existence
 made a sketch that has been on my mind for a while. 
 
