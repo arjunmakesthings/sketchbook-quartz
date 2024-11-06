@@ -1,5 +1,5 @@
 ***
-### more existence artwork
+### more existence artwork #p5
 looking at the shape of cells, introducing some randomness, etc. 
 
 ![[Screenshot 2024-11-06 at 7.20.13 PM.png]]
@@ -7,7 +7,7 @@ looking at the shape of cells, introducing some randomness, etc.
 19:20, 2024-11-06
 
 ***
-### existence
+### existence #p5 
 made a sketch that has been on my mind for a while. 
 
 ![[Screenshot 2024-11-06 at 1.11.30 PM.png]]
