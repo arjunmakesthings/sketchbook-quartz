@@ -1,4 +1,16 @@
 ***
+### existence
+made a sketch that has been on my mind for a while. 
+
+![[Screenshot 2024-11-06 at 1.11.30 PM.png]]
+
+the idea is to represent existence. 
+
+each 'cell' (circles) have links to other 'cells'. 
+
+14:20, 2024-11-06
+
+***
 ### water-boy #strudel #hydra 
 spent 30 minutes today learning some hydra. had an idea in mind and could figure out how to execute it. 
 
