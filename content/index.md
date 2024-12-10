@@ -1,4 +1,45 @@
 ***
+### creating 'voids' #p5 
+Had to create voids / scars for a new project. Used vertices and contours inside to cut out voids / scars. 
+
+``` js
+//going to use a contour cut out from a solid shape.
+
+//exterior vertices have to be clockwise winding. 
+
+var left = 100; 
+var top = 100; 
+
+var w = 100; //left + w gives right-most coordinates. 
+var h = 100; //top + h gives bottom-most coordinates. 
+
+var right = left + w; 
+var bottom = top + h; 
+
+beginShape(); 
+vertex (left, top); // LEFT TOP
+vertex (right, top); 
+vertex (right, bottom); 
+vertex (left, bottom); 
+
+//now i need a shape to form inside this, anti-clockwise winding. 
+var leftInside = random(left, (left+w/2)); //from left to midpoint
+var topInside = random(top, (top+h/2)); 
+var rightInside = random(leftInside, right); 
+var bottomInside = random(topInside, bottom); 
+
+beginContour(); 
+vertex (leftInside, topInside); 
+vertex (leftInside, bottomInside); 
+vertex (rightInside, bottomInside); 
+vertex (rightInside, topInside); 
+endContour(); 
+
+endShape(CLOSE); 
+
+```
+
+***
 ### more existence artwork #p5
 looking at the shape of cells, introducing some randomness, etc. 
 
